@@ -127,7 +127,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 {/* Floating Metric Pill 1 */}
                 <div className="absolute top-4 right-4 bg-slate-950/80 backdrop-blur-md px-3.5 py-2 rounded-xl border border-cyan-500/30 text-white text-xs font-semibold shadow-lg flex items-center gap-2">
                   <Icons.GraduationCap size={14} className="text-cyan-400" />
-                  <span>CSE </span>
+                  <span>Running</span>
                 </div>
 
                 {/* Floating Metric Pill 2 */}

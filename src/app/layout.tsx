@@ -13,12 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Mercer | Senior Full Stack Web Developer & Software Engineer",
-  description: "Portfolio of Alex Mercer — Senior Full Stack Developer specializing in Next.js, React, TypeScript, Tailwind CSS, Node.js, Express, and MongoDB.",
+  title: "Anika Tahosina Mim   | ",
+  description: "Portfolio of Anika Tahosina Mim — Senior Full Stack Developer specializing in Next.js, React, TypeScript, Tailwind CSS, Node.js, Express, and MongoDB.",
   keywords: ["Full Stack Developer", "Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "MongoDB", "TanStack Query", "RTK Query", "Recharts"],
-  authors: [{ name: "Alex Mercer" }],
+  authors: [{ name: "Anika Tahosina Mim" }],
   openGraph: {
-    title: "Alex Mercer | Senior Full Stack Engineer Portfolio",
+    title: "Anika Tahosina Mim | Senior Full Stack Engineer Portfolio",
     description: "Building production-grade web applications with Next.js, React, TypeScript, Tailwind CSS, Node.js, and MongoDB.",
     type: "website",
   },
