@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { About } from '@/components/About';
@@ -9,19 +9,20 @@ import { Projects } from '@/components/Projects';
 import { Education } from '@/components/Education';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
-import { ResumeModal } from '@/components/ResumeModal';
+import { BackgroundSpotlight } from '@/components/BackgroundSpotlight';
 
 export default function Home() {
-  const [resumeOpen, setResumeOpen] = useState(false);
-
   return (
-    <div className="min-h-screen bg-[#07090e] text-slate-100 selection:bg-cyan-500 selection:text-slate-950">
+    <div className="min-h-screen bg-[#07090e] text-slate-100 selection:bg-cyan-500 selection:text-slate-950 relative overflow-hidden">
+      {/* Background Interactive Mouse Spotlight */}
+      <BackgroundSpotlight />
+
       {/* Top Fixed Navbar */}
-      <Navbar onOpenResume={() => setResumeOpen(true)} />
+      <Navbar />
 
       {/* Main Content Sections */}
       <main>
-        <Hero onOpenResume={() => setResumeOpen(true)} />
+        <Hero />
         <About />
         <Skills />
         <Projects />
@@ -31,9 +32,6 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
-
-      {/* Interactive Resume View / Download Modal */}
-      <ResumeModal isOpen={resumeOpen} onClose={() => setResumeOpen(false)} />
     </div>
   );
 }

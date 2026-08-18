@@ -3,12 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
 import { Icons } from './Icons';
+import { triggerConfetti } from '@/utils/confetti';
 
-interface NavbarProps {
-  onOpenResume: () => void;
-}
-
-export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
+export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -98,13 +95,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
 
           {/* Action Buttons (Desktop) */}
           <div className="hidden md:flex items-center gap-3">
-            <button
-              onClick={onOpenResume}
-              className="flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-xl border border-slate-700 bg-slate-900/60 text-slate-200 hover:border-cyan-500/50 hover:text-cyan-400 transition-all shadow-sm"
+            <a
+              href={PORTFOLIO_DATA.resume.downloadUrl}
+              download={PORTFOLIO_DATA.resume.filename}
+              onClick={triggerConfetti}
+              className="flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-xl border border-slate-700 bg-slate-900/60 text-slate-200 hover:border-cyan-500/50 hover:text-cyan-400 transition-all shadow-sm hover:scale-105 active:scale-95"
             >
               <Icons.Download size={14} />
-              <span>Resume</span>
-            </button>
+              <span>Download Resume</span>
+            </a>
             <a
               href="#contact"
               className="px-4 py-2 text-xs font-semibold rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 hover:from-cyan-400 hover:to-blue-500 transition-all shadow-md shadow-cyan-500/20 hover:scale-105"
@@ -149,16 +148,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
           </div>
 
           <div className="pt-3 border-t border-slate-800/80 flex flex-col gap-2.5">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenResume();
-              }}
-              className="flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold rounded-xl border border-slate-700 bg-slate-900 text-slate-200"
+            <a
+              href={PORTFOLIO_DATA.resume.downloadUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold rounded-xl border border-slate-700 bg-slate-900 text-slate-200 hover:border-cyan-500/40 hover:text-cyan-400 transition-colors"
             >
               <Icons.Download size={16} />
-              <span>View / Download Resume</span>
-            </button>
+              <span>View Resume</span>
+            </a>
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}

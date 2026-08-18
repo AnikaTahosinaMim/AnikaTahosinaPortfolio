@@ -1,16 +1,23 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import { PORTFOLIO_DATA, Education as EducationType } from '@/data/portfolioData';
 import { Icons } from './Icons';
 
 export const Education: React.FC = () => {
   return (
-    <section id="education" className="py-24 relative bg-grid-pattern">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="education" className="py-24 relative bg-grid-pattern overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto space-y-3 mb-16"
+        >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-mono uppercase tracking-widest">
             <Icons.GraduationCap size={16} />
             <span>Academic Background</span>
@@ -22,32 +29,48 @@ export const Education: React.FC = () => {
             My educational background, academic achievements, and core coursework in computer science
           </p>
           <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-indigo-500 mx-auto rounded-full mt-4" />
-        </div>
+        </motion.div>
 
         {/* Vertical Timeline */}
         <div className="max-w-4xl mx-auto relative">
           
-          {/* Vertical Line */}
-          <div className="absolute top-0 bottom-0 left-4 md:left-1/2 -translate-x-1/2 w-0.5 bg-gradient-to-b from-cyan-500 via-indigo-500 to-slate-800" />
+          {/* Vertical Glowing Line */}
+          <motion.div 
+            initial={{ height: 0 }}
+            whileInView={{ height: '100%' }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="absolute top-0 bottom-0 left-4 md:left-1/2 -translate-x-1/2 w-0.5 bg-gradient-to-b from-cyan-500 via-indigo-500 to-slate-800 shadow-lg shadow-cyan-500/30"
+          />
 
           <div className="space-y-12">
             {PORTFOLIO_DATA.education.map((edu: EducationType, index: number) => {
               const isEven = index % 2 === 0;
               return (
-                <div
+                <motion.div
                   key={edu.id}
+                  initial={{ opacity: 0, y: 35 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
                   className={`relative flex flex-col md:flex-row items-start ${
                     isEven ? 'md:flex-row-reverse' : ''
                   }`}
                 >
                   {/* Center Node Badge */}
-                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-950 border-2 border-cyan-500 text-cyan-400 flex items-center justify-center shadow-lg shadow-cyan-500/20 z-10">
+                  <motion.div 
+                    whileHover={{ scale: 1.25, rotate: 12 }}
+                    className="absolute left-4 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-950 border-2 border-cyan-500 text-cyan-400 flex items-center justify-center shadow-lg shadow-cyan-500/30 z-10 cursor-pointer"
+                  >
                     <Icons.GraduationCap size={18} />
-                  </div>
+                  </motion.div>
 
                   {/* Content Box */}
                   <div className="ml-12 md:ml-0 md:w-[calc(50%-2.5rem)] w-full">
-                    <div className="glass-card glass-card-hover p-6 rounded-3xl border border-slate-800 space-y-4">
+                    <motion.div 
+                      whileHover={{ scale: 1.02, y: -4 }}
+                      className="glass-card glass-card-hover p-6 rounded-3xl border border-slate-800 space-y-4 shadow-xl"
+                    >
                       
                       {/* Period Badge & Result */}
                       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -97,9 +120,9 @@ export const Education: React.FC = () => {
                         </div>
                       )}
 
-                    </div>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>

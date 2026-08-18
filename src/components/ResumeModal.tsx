@@ -3,6 +3,7 @@
 import React from 'react';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
 import { Icons } from './Icons';
+import { triggerConfetti } from '@/utils/confetti';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -36,13 +37,24 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           </div>
           
           <div className="flex items-center gap-2">
-            <button
-              onClick={handleDownload}
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-cyan-500 text-slate-950 hover:bg-cyan-400 transition-colors shadow-lg shadow-cyan-500/20"
+            <a
+              href={PORTFOLIO_DATA.resume.exportPdfUrl}
+              download={PORTFOLIO_DATA.resume.filename}
+              onClick={triggerConfetti}
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 hover:from-cyan-400 hover:to-blue-500 transition-all shadow-lg shadow-cyan-500/20"
             >
               <Icons.Download size={16} />
-              <span>Print / Download PDF</span>
-            </button>
+              <span>Download PDF</span>
+            </a>
+            <a
+              href={PORTFOLIO_DATA.resume.googleDocUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-slate-700 bg-slate-900 text-slate-200 hover:text-white hover:border-slate-600 transition-colors"
+            >
+              <Icons.ExternalLink size={16} />
+              <span>View Google Doc</span>
+            </a>
             <button
               onClick={onClose}
               className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors"

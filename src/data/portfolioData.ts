@@ -84,9 +84,11 @@ export const PORTFOLIO_DATA = {
 
   resume: {
     filename: "Anika_Tahosina_Mim_Resume.pdf",
-    downloadUrl: "#", // Fallback URL or interactive modal viewer
-    updatedDate: "July 2026",
-    summaryText: "Senior Full Stack Software Engineer with deep expertise in Next.js, React, TypeScript, Tailwind CSS,javaScript, Node.js, Express, and MongoDB.",
+    downloadUrl: "https://docs.google.com/document/d/1LJpT-BK6kFtzygfRZRv8KzjCpEbXCPvUIcl-KucIb8Y/export?format=pdf",
+    googleDocUrl: "https://docs.google.com/document/d/1LJpT-BK6kFtzygfRZRv8KzjCpEbXCPvUIcl-KucIb8Y/edit?pli=1&tab=t.0",
+    exportPdfUrl: "https://docs.google.com/document/d/1LJpT-BK6kFtzygfRZRv8KzjCpEbXCPvUIcl-KucIb8Y/export?format=pdf",
+    updatedDate: "August 2026",
+    summaryText: "Full Stack Software Engineer specializing in Next.js, React, TypeScript, Node.js, Express, and MongoDB.",
   },
 
   socialLinks: [

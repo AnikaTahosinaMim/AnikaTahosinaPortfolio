@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
 import { Icons } from './Icons';
 
@@ -24,11 +25,17 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-24 relative bg-slate-950/60 border-y border-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-24 relative bg-slate-950/60 border-y border-slate-900 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto space-y-3 mb-16"
+        >
           <h2 className="text-xs font-mono text-cyan-400 uppercase tracking-widest">
             About Me
           </h2>
@@ -36,13 +43,19 @@ export const About: React.FC = () => {
             Engineering High-Impact Web Applications
           </h3>
           <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-indigo-500 mx-auto rounded-full" />
-        </div>
+        </motion.div>
 
         {/* Grid Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Bio & Stats */}
-          <div className="lg:col-span-6 space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-6 space-y-6"
+          >
             <h4 className="text-xl md:text-2xl font-bold text-white leading-snug">
               Specialized in End-to-End TypeScript & JavaScript Ecosystems
             </h4>
@@ -55,36 +68,52 @@ export const About: React.FC = () => {
 
             {/* Quick Metrics Cards */}
             <div className="grid grid-cols-3 gap-4 pt-4">
-              <div className="glass-card p-4 rounded-2xl text-center border border-slate-800">
-                <span className="block text-2xl md:text-3xl font-extrabold text-cyan-400">Runing</span>
+              <motion.div 
+                whileHover={{ scale: 1.05, y: -4 }}
+                className="glass-card glass-card-hover p-4 rounded-2xl text-center border border-slate-800/80 shadow-md"
+              >
+                <span className="block text-2xl md:text-3xl font-extrabold text-cyan-400">Running</span>
                 <span className="text-xs text-slate-400 mt-1 block">Diploma in CSE</span>
-              </div>
-              <div className="glass-card p-4 rounded-2xl text-center border border-slate-800">
+              </motion.div>
+              
+              <motion.div 
+                whileHover={{ scale: 1.05, y: -4 }}
+                className="glass-card glass-card-hover p-4 rounded-2xl text-center border border-slate-800/80 shadow-md"
+              >
                 <span className="block text-2xl md:text-3xl font-extrabold text-indigo-400">{PORTFOLIO_DATA.personal.projectsCompleted}</span>
                 <span className="text-xs text-slate-400 mt-1 block">Projects Built</span>
-              </div>
-              <div className="glass-card p-4 rounded-2xl text-center border border-slate-800">
+              </motion.div>
+              
+              <motion.div 
+                whileHover={{ scale: 1.05, y: -4 }}
+                className="glass-card glass-card-hover p-4 rounded-2xl text-center border border-slate-800/80 shadow-md"
+              >
                 <span className="block text-2xl md:text-3xl font-extrabold text-emerald-400">{PORTFOLIO_DATA.personal.happyClients}</span>
                 <span className="text-xs text-slate-400 mt-1 block">Satisfied Clients</span>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Key Pillars */}
           <div className="lg:col-span-6 space-y-4">
             {highlights.map((item, idx) => (
-              <div
+              <motion.div
                 key={idx}
-                className="glass-card glass-card-hover p-6 rounded-2xl border border-slate-800 flex items-start gap-5"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.15 }}
+                whileHover={{ scale: 1.02, x: 4 }}
+                className="glass-card glass-card-hover p-6 rounded-2xl border border-slate-800 flex items-start gap-5 shadow-lg"
               >
-                <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 shrink-0">
+                <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 shrink-0 shadow-inner">
                   {item.icon}
                 </div>
                 <div className="space-y-1.5">
                   <h5 className="text-lg font-bold text-white">{item.title}</h5>
                   <p className="text-sm text-slate-400 leading-relaxed">{item.description}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 

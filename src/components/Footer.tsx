@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-5 space-y-2">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-500 flex items-center justify-center font-bold text-slate-950 text-sm">
-                AM
+                AT
               </div>
               <span className="font-bold text-white text-lg">
                 {PORTFOLIO_DATA.personal.name}
@@ -47,7 +47,8 @@ export const Footer: React.FC = () => {
             <a href="#about" className="hover:text-cyan-400 transition-colors">About</a>
             <a href="#skills" className="hover:text-cyan-400 transition-colors">Skills</a>
             <a href="#projects" className="hover:text-cyan-400 transition-colors">Projects</a>
-            <a href="#experience" className="hover:text-cyan-400 transition-colors">Experience</a>
+            <a href="#education" className="hover:text-cyan-400 transition-colors">Education</a>
+            <a href={PORTFOLIO_DATA.resume.downloadUrl} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">Resume</a>
             <a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a>
           </div>
 
