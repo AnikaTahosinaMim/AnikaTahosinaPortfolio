@@ -45,7 +45,7 @@ export const About: React.FC = () => {
           <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-indigo-500 mx-auto rounded-full" />
         </motion.div>
 
-        {/* Grid Content */}
+        {/* Grid Conten */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Bio & Stats */}
