@@ -127,7 +127,7 @@ export const PORTFOLIO_DATA = {
   skills: [
     // Frontend
     { name: "React.js", level: 95, category: "Frontend" },
-    { name: "Next.js (App Router)", level: 92, category: "Frontend" },
+    { name: "Next.js", level: 92, category: "Frontend" },
     { name: "TypeScript", level: 90, category: "Frontend" },
     { name: "Tailwind CSS", level: 95, category: "Frontend" },
     { name: "HTML5 / CSS3 / ES6+", level: 98, category: "Frontend" },
@@ -140,13 +140,10 @@ export const PORTFOLIO_DATA = {
     { name: "Express.js", level: 94, category: "Backend" },
     { name: "TypeScript (Backend)", level: 90, category: "Backend" },
     { name: "MongoDB & Mongoose", level: 88, category: "Backend" },
-    { name: "RESTful & GraphQL APIs", level: 90, category: "Backend" },
 
     // Tools & DevOps
     { name: "Git / GitHub Actions", level: 92, category: "Tools & DevOps" },
-    { name: "Docker & Containers", level: 80, category: "Tools & DevOps" },
     { name: "Vercel / AWS", level: 85, category: "Tools & DevOps" },
-    { name: "Jest / React Testing Library", level: 82, category: "Tools & DevOps" },
   ] as Skill[],
 
   // =========================================================================
