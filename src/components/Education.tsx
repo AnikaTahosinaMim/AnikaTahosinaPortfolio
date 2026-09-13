@@ -23,7 +23,7 @@ export const Education: React.FC = () => {
             <span>Academic Background</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white">
-            Education & Qualifications
+            Educations & Qualifications
           </h2>
           <p className="text-slate-400 text-sm">
             My educational background, academic achievements, and core coursework in computer science
