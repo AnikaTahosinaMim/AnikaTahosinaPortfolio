@@ -123,7 +123,7 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Drawer */}
+      {/* Mobile Menu Drawer  jhhghhkg*/}
       {mobileMenuOpen && (
         <div className="md:hidden glass-nav border-t border-slate-800/80 px-4 pt-4 pb-6 mt-3 space-y-3 animate-fadeIn">
           <div className="flex flex-col space-y-1">
